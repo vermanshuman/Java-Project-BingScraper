@@ -10,12 +10,6 @@ public class BingScraper{
 	public static void main(String[] args){
 	try{
 		Parser parser=new Parser();
-		//ArrayList<String> array=parser.getKeywords(keywords);
-		//String nKeywords=parser.fixKeywords(parser.getKeywords(keywords));
-		//parser.getCode("http://www.google.com/");
-		//parser.getCode("http://www.google.com/search?q=uga+computer+science+program&btnG=Search&oe=utf-8&rls=org.mozilla%3Aen-US%3Aofficial&client=firefox-a&channel=fflb&gbv=1", output);
-		//parser.getCode("http://www.google.com/search?q=" + nKeywords + "&btnG=Search&oe=utf-8&rls=org.mozilla%3Aen-US%3Aofficial&client=firefox-a&channel=fflb&gbv=1", output);
-		//parser.parseFile(input, output);
 
 		if(args.length!=4 && args.length!=6){
 			System.out.println("Please enter the correct arguments.");
@@ -50,7 +44,6 @@ public class BingScraper{
 						System.out.println("Conducting search for " + keywords);
 						nKeywords=parser.fixKeywords(parser.getKeywords(keywords));
 						parser.getCode("http://www.bing.com/search?q=" + nKeywords, "code.txt");
-	/*				parser.getCode("http://www.google.com/search?q=" + nKeywords + "&btnG=Search&oe=utf-8&rls=org.mozilla:en-US:official&client=firefox-a&channel=fflb&gbv=1", "code.txt");*/
 						parser.parseFile("code.txt", output);
 					}
 					
